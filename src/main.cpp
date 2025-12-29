@@ -4,9 +4,18 @@
 
 // internal
 #include "core/State.h"
+#include "engine/AudioEngine.h"
+// wrapper for window creation
+// renderer/imgui
 
 int main(int argc, char* argv[]) {
     AppState state;
+
+    AudioEngine audio;
+    if (!audio.Start(&state)) {
+        std::cerr << "Failed to start audio capture. Is a device available?" << std::endl;
+        return -1;
+    }
 
     std::cout << "HUD started" << std::endl;
 
@@ -16,5 +25,8 @@ int main(int argc, char* argv[]) {
         // for the love of everything include slider and variable later
         std::this_thread::sleep_for(std::chrono::milliseconds(16));
     }
+
+    audio.Stop();
+
     return 0;
 }
