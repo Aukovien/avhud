@@ -1,3 +1,0 @@
-[submodule "external/kissfft"]
-	path = external/kissfft
-	url = https://github.com/mborgerding/kissfft.git
