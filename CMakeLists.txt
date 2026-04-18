@@ -24,15 +24,11 @@ target_include_directories(avhud PRIVATE
 )
 
 # Windows system libs
-# d2d1        : Direct2D drawing
-# dwrite      : DirectWrite (text rendering, needed by D2D)
-# dxgi        : DXGI (swap chains / display infrastructure)
-# dwmapi      : DWM (window composition / blur behind)
 target_link_libraries(avhud PRIVATE
-    d2d1
-    dwrite
-    dxgi
-    dwmapi
+    d2d1    # Direct2D drawing
+    dwrite  # DirectWrite (text rendering)
+    dxgi    # display infrastructure (swap chains / display infrastructure)
+    dwmapi  # window composition (window composition / blur behind)
 )
 
 # Compiler warns
@@ -41,3 +37,6 @@ if (MSVC)
 else()
     target_compile_options(avhud PRIVATE -Wall -Wextra -Werror)
 endif()
+
+# Tests
+add_subdirectory(tests)
