@@ -1,8 +1,6 @@
 #pragma once
 
 #include <functional>
-
-#define MINIAUDIO_IMPLEMENTATION
 #include "miniaudio.h"
 
 /*
@@ -13,8 +11,8 @@
  *
  * Sample format: f32, 2 channels (interleaved L/R), 48000hz
  *
- * The callback fires on a background audio thread.
- * Idea is to keep it fast and never block inside it.
+ * The callback fires on a background audio thread — keep it fast and
+ * never block inside it.
  */
 
 using SampleCallback = std::function<void(const float* samples, int frame_count)>;

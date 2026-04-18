@@ -1,3 +1,4 @@
+#define MINIAUDIO_IMPLEMENTATION
 #include "audio/AudioCapture.h"
 #include <cstdio>
 
