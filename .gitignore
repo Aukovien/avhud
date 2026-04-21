@@ -43,3 +43,9 @@
 # folders
 build/
 .cache/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
